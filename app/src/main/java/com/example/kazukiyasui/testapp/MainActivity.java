@@ -10,10 +10,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    EditText et_name;
+    TextView tv_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        et_name = findViewById(R.id.et_Name);
+        tv_name = findViewById(R.id.tv_Name);
 
         //OKボタン
         Button bt_ok = findViewById(R.id.button_ok);
@@ -58,6 +64,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 iv_droid.setImageResource(R.drawable.android_logo_red);
                 break;
         }
+    }
+
+    public void inputName(View view){
+        String txt = et_name.getText().toString();
+        tv_name.setText(txt);
     }
 
 //    class OkButtonClickListener implements View.OnClickListener
